@@ -49,15 +49,15 @@ table {
 /* LAYOUT STYLES */
 body {
   font-size: 1em;
-  line-height: 1.5; 
-  background: #e7e7e7 url(../images/body-bg.png) 50% 0 no-repeat;
+  line-height: 1.1; 
+  background: #e7e7e7 url(../images/body-bg.jpg) 50% 0 no-repeat;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-  color: #0000ff;
+  color: #444;
 }
 
 a {
-  color: #d5000d;
+  color: #3000ff;
 }
 a:hover {
   color: #c5000c;
@@ -250,7 +250,7 @@ h3 {
   color: #d5000d;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 1px;
 } 
  
 h4 {
@@ -270,7 +270,7 @@ h6 {
 } 
 
 p {
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: 20px;
 }
  
@@ -279,7 +279,7 @@ a {
 }
 
 p a {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 blockquote {
@@ -309,14 +309,14 @@ footer {
   padding-top: 20px;
   padding-bottom: 30px;
   font-size: 13px;
-  color: #0000ff;
+  color: #444;
 }
 
 footer a {
-  color: #666;
+  color: #444;
 }
 footer a:hover {
-  color: #444;
+  color: #222;
 }
 
 /* MISC */
