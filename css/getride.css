@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+      #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+        width: 100%;
+ position:absolute; 
+top: 0; 
+left: 0;
+z-index: 0;
+      }
+      #right-panel {
+        float: right;
+        width: 48%;
+        padding-left: 2%;
+z-index: 1; /* The z-index should be higher than Google Maps */
+background: black;
+  height: auto;
+  opacity: .45; /* Set the opacity for a slightly transparent Google Form */
+      }
+      #output {
+        font-size: 11px;
+      }
+
+#addressform { 
+  position: relative; 
+  z-index: 1; /* The z-index should be higher than Google Maps */
+  width: 800px;
+  margin: 60px auto 0;
+  padding: 10px;
+  background: black;
+  height: auto;
+  opacity: .45; /* Set the opacity for a slightly transparent Google Form */ 
+  color: white;
+}
+#output { 
+  z-index: 1; /* The z-index should be higher than Google Maps */
+  background: black;
+  position: relative; 
+  margin: 60px auto 0;
+  padding: 10px;
+  opacity: .45; /* Set the opacity for a slightly transparent Google Form */ 
+  color: white;
+}
+#miles { 
+  z-index: 1; /* The z-index should be higher than Google Maps */
+
+ /* background: black;*/
+    position:  relative; 
+ /* opacity: .5; */
+  color: white;
+}
