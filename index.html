@@ -1,232 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Get Ride</title>
-<!-- Meta tag Keywords -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--// Meta tag Keywords -->
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Maze on Move</title>
+  <style>
+     
+@font-face {
+   font-family: myFirstFont;
+   src: url(fonts/HoboStd.otf);
 
-<!-- css files -->
-<link rel="stylesheet" href="css/getride.css"> 
-<link rel="stylesheet" href="css/request.css"> 
-<link rel="stylesheet" href="css/mobile.css"> 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<!-- //css files -->
-
-
-<!-- web-fonts 
-<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
-web-fonts -->
-</head>
-
-
-<!-- ************************************************************************** -->
-<script>
-var loc=[];
-var locindex=0;
-</script>
-<!-- ************************************************************************** -->
-<script>
-function initMap() {
-//document.getElementById("addressform").innerHTML ="initMap() ";
-    var from = document.getElementsByName("fromAddr")[0].value;
-  //  if(from!=null)
-   // 	document.getElementById("addressform").innerHTML = from+'<br>';
-//document.getElementById("demo").innerHTML = ""+'<br>';
-//  alert("Hi? \n nice shirt");
-    var to = document.getElementsByName("toAddr")[0].value;
-  //  if(to!=null)
-   // 	document.getElementById("addressform").innerHTML = to;
-
-    if(from!=null && to!=null)
-   	 getDistance(from, to) 
 }
-</script>
 
-<!-- ************************************************************************** -->
+div {
+   font-family: myFirstFont;
+}
+  </style>
+  </head>
 
-<script>
-      function getDistance(from, to) 
-      {
-//document.getElementById("addressform").innerHTML +="getDistance() ";
-		var meter=0.000621;
-	var rate=2;
-        var bounds = new google.maps.LatLngBounds;
-        var markersArray = [];
+  <body>
+    <div id="container">
+      <div class="inner">
 
-	//	var origin1 = 'Minneapolis–Saint Paul International Airport';
-		//var destinationA = 'Radisson Blu, Minneapolis Downtown, MN';
-	//	var destinationA = '635 prairie ctr dr, eden prairie, MN';
+		<section id="main_content">
+         
+        <br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br>
+		<p>
+		<b>Maze on Move</b> is a simple but challenging and addictive fun mobile game.
+		</p>
 	
-        var destinationIcon = 'https://chart.googleapis.com/chart?' +
-            'chst=d_map_pin_letter&chld=D|FF0000|000000';
-        var originIcon = 'https://chart.googleapis.com/chart?' +
-            'chst=d_map_pin_letter&chld=O|FFFF00|000000';
-        var map = new google.maps.Map(document.getElementById('map'), 
-        {
-	          center: {lat: 55.53, lng: 9.4},
-	          zoom: 10,
-        mapTypeControl: false
+		
+		<p>
+		Available for: <a href="http://itunes.apple.com/us/app/maze-on-move/id1332898444?mt=8">IOS</a>
+		and <a href="http://play.google.com/store/apps/details?id=com.einal.mazeonmove">Android</a>
+		</p>
+		
+		<p>
+		Please
+		<a href="mailto:elmd147@gmail.com?Subject=Hello%20again" target="_top">
+		Send Email</a> for issues or feedback.
+		</p>
 
-        });
-        var geocoder = new google.maps.Geocoder;
+        </section>
 
-        var service = new google.maps.DistanceMatrixService;
-        service.getDistanceMatrix({
-          origins: [from],
-          destinations: [to],
-          travelMode: 'DRIVING',
-          unitSystem: google.maps.UnitSystem.IMPERIAL,//.METRIC,
-          avoidHighways: false,
-          avoidTolls: false
- //mapTypeControl: false
-        }, function(response, status) {
-          if (status !== 'OK') 
-          {
-            alert('Error was: ' + status);
-          } 
-          else 
-          {
-            var originList = response.originAddresses;
-            var destinationList = response.destinationAddresses;
-        //    var outputDiv = document.getElementById('output');
-         //   outputDiv.innerHTML = '';
-            deleteMarkers(markersArray);
+        <footer>
+         <span style="padding: 0 12px">&nbsp;</span>
+         <a href="http://einal.github.io/maze-on-move.privacypolicy/">Privacy Policy</a>
+         <span style="padding: 0 120px">&nbsp;</span>
+         <a href="http://einal.github.io/maze-on-move.terms/">Terms of Service</a>
+        </footer>
 
-            var showGeocodedAddressOnMap = function(asDestination) 
-            {
-              var icon = asDestination ? destinationIcon : originIcon;
-              return function(results, status) 
-              {
-                if (status === 'OK') 
-                {
-loc[locindex++]=results[0].geometry.location.lat();
-loc[locindex++]=results[0].geometry.location.lng();  
-//document.getElementById('output').innerHTML += loc.length +'<br>' +loc[0] + '<br>'+loc[1]+ '<br>'+loc[2] + '<br>'+loc[3]+ '<br>';
- var flightPlanCoordinates = [
-          {lat: loc[0], lng: loc[1]},
-          {lat: loc[2], lng:  loc[3]}
-        ];
-        var flightPath = new google.maps.Polyline({
-          path:flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 3
-        });
-        flightPath.setMap(map);
-
-                     map.fitBounds(bounds.extend(results[0].geometry.location));
-                     markersArray.push(new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location,
-                    icon: icon
-                  }));
-
-                } 
-                else 
-                {
-                  alert('Geocode was not successful due to: ' + status);
-                }
-              };
-            };
-
-//outputDiv.innerHTML += status + '<br>' ;
-var distance = response.rows[0].elements[0].distance;
-var distance_value = distance.value;
-var distance_text = distance.text;
-var milage=distance_value* meter;
-var money=(milage*rate).toFixed(2);
-money=Math.round(money);
-
-//outputDiv.innerHTML += distance_value +"     "+distance.text + '<br>' ;
-//document.getElementById('output').innerHTML = distance_value +"  ,,,,,   "+money + '<br>' ;
-document.getElementById('miles').innerHTML = "Fare = "+milage+"M  ==>  $"+money + '<br>' ;
-//document.getElementById("miles").innerHTML += "   "+distance_text;
-//document.getElementsByName("fare").innerHTML=distance_value;
-if(distance_value==0)
-return;
-            for (var i = 0; i < originList.length; i++) 
-            {
-	              var results = response.rows[i].elements;
-	              geocoder.geocode({'address': originList[i]},  showGeocodedAddressOnMap(false));
-	              for (var j = 0; j < results.length; j++) 
-	              {
-	                geocoder.geocode({'address': destinationList[j]}, showGeocodedAddressOnMap(true));
-	            //    outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
-	            //        ': ' + results[j].distance.text + ' in ' +
-	            //        results[j].duration.text + '<br>';
-	              }
-            }
-          }
-        });
-      }
-
-      function deleteMarkers(markersArray) {
-        for (var i = 0; i < markersArray.length; i++) {
-          markersArray[i].setMap(null);
-        }
-        markersArray = [];
-      }
-</script>
-
-
-
-<!-- ************************************************************************** -->
-
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC7BKFAPPwzu9gYQcFv4KVbY4SnpevKS8&callback=getDistance">
-</script>
-
-<!-- ************************************************************************** -->
-<!-- ************************************************************************** -->
-<!-- ************************************************************************** -->
-
-<body>
-<div id="map"></div>
-<div id="addressform">
-<label><b>Enter pickUp  dropOff address</b></label><br>
-pickUp : <input name="fromAddr" type="text" size="60" value="Minneapolis–Saint Paul International Airport"><br>
-dropOff: <input name="toAddr" type="text" size="60" value="635 prairie ctr dr, eden prairie, MN"><br><br>
-<!--dropOff: <input name="toAddr" type="text" size="60" value="Minneapolis–Saint Paul International Airport"><br>-->
-<button onclick="initMap()">Fare</button>
-<!--money: <input name="fare" type="text" size="10" value=""<br>-->
-<!--<div id="fare">Fare: <style> display: inline-block;  float:left;</style></div>-->
-
-<!--<div><label><b>Fare: </b></label><span id='miles'></span></div>-->
-<div><span id='miles'></span></div>
-<!--<p>Fare: <span id='fare'></span></p>-->
-<!--<div id="output"></div>-->
-
-<h3>Contact Form</h3>
-
-<div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
-</div> <!--addressform-->
-
-
-</body>
+        
+      </div>
+    </div>
+  </body>
 </html>
